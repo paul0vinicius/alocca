@@ -1,0 +1,24 @@
+.edit-class-card {
+  margin: 50px 50px 50px 50px;
+  padding: 0px 0px 0px 0px;
+}
+
+.edit-class-card-content {
+    padding: 30px 30px 30px 30px;
+}
+
+.professor1-name-input {
+    width: 15%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+}
+
+.professor2-name-input {
+    width: 15%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

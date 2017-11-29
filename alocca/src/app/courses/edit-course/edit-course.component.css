@@ -1,0 +1,90 @@
+#edit-course-card {
+  margin: 50px 50px 50px 50px;
+  padding: 0px 0px 0px 0px;
+}
+
+.edit-course-card-toolbar {}
+
+#cancel-button{
+    margin-right: 1%;
+}
+
+#edit-course-card-content {
+    padding: 30px 30px 30px 30px;
+}
+
+.course-card-row {
+    display: inline;
+}
+
+#professor-code-input{
+    width: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+}
+
+#course-name-input {
+    width: 38%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3%;
+}
+
+#course-shortName-input {
+    width: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+    margin-left: 3%;
+}
+
+#course-credits-input {
+    width: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+    margin-left: 7%;
+}
+
+#course-type-input {
+    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+
+.course-semester-input {
+    width: 21%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 5px!important;
+}
+
+#unified-semester{
+    margin-left: 30%;
+}
+
+#minimum-semester{
+    margin-left: 7%;
+}
+
+#maximum-semester{
+    margin-left: 3%;
+}
+
+.course-department-input {
+    width: 20%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#offerer-department{
+    margin-left: 25%; 
+}
+
+#requerer-department{
+    margin-left: 5%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

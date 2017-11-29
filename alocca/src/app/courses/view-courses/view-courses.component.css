@@ -1,0 +1,23 @@
+#view-courses-card {
+  margin: 3.5% 4% 3.5% 4%;
+  padding: 0px 0px 0px 0px;
+}
+
+#course-card-content {
+  text-align: center;
+  padding: 0.5% 0.5% 0.5% 0.5%;
+  overflow-x: auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.delete-button{
+  color: red;
+}
+
+/* Remove the blue outline from a selected option. */
+*:focus {
+outline: none;
+}

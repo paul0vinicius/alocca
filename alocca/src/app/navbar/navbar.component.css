@@ -1,0 +1,35 @@
+.fill-remaining-space {
+   /*This fills the remaining space, by using flexbox.  
+  Every toolbar row uses a flexbox row layout.*/
+  flex: 1 1 auto;
+}
+
+/* Remove the blue outline from a selected option. */
+*:focus {
+outline: none;
+}
+
+#selected-semester {
+  width: auto;
+  display: inline-block;
+  margin-right: 2%;
+}
+
+#add-semester-option{
+  width: auto;
+  vertical-align: middle;
+}
+
+.select-semester-option{
+  width: auto;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.remove-semester{
+  vertical-align: middle;
+}
+
+#page-content{
+  overflow-x: auto;
+}

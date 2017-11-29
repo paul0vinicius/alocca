@@ -1,0 +1,23 @@
+﻿<mat-card class="board-container">
+    <mat-tab-group>
+        <mat-tab label="Alertas">
+            <mat-card class="alert-container" *ngFor="let alert of alertsList" >
+                <mat-card-title>{{alert.title}}</mat-card-title>
+                <mat-card-content>
+                    <p>{{alert.message}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button (click)="ignoreAlert(alert.id)" mat-button color="primary">IGNORAR</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Ignorados">
+          <mat-card class="alert-container" *ngFor="let alert of ignoredAlerts">
+            <mat-card-title>{{alert.title}}</mat-card-title>
+            <mat-card-content>
+              <p>{{alert.message}}</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

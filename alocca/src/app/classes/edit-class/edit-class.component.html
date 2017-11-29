@@ -1,0 +1,35 @@
+<mat-card class="edit-class-card">
+  <form (ngSubmit)="onUpdateClass()" #allocationForm="ngForm" align="center">
+    <mat-toolbar color="primary" class="edit-class-card-toolbar">
+        Editar {{course}}
+        <span class="spacer"></span>
+        <button mat-button style="margin-right: 5px" [routerLink]="['/classes']">Cancelar</button>
+    </mat-toolbar>
+
+    <mat-card-content class="edit-class-card-content">
+      <div class="edit-class-card-row">
+
+        <mat-select class="professor1-name-input" placeholder="Docente 1" [(ngModel)]="professor1" name="professor1">
+          <mat-option *ngFor="let prof of professorsList" [value]="prof">
+            {{ prof.nickname }}
+          </mat-option>
+        </mat-select>
+
+        <mat-select class="professor2-name-input" placeholder="Docente 2" [(ngModel)]="professor2" name="professor2">
+          <mat-option *ngFor="let prof of professorsList" [value]="prof">
+            {{ prof.nickname }}
+          </mat-option>
+        </mat-select>
+
+
+        <mat-form-field class="class-note-input">
+          <input matInput class="allocation-note-input" placeholder="Observação" [(ngModel)]="currentNote" name="currentNote">
+        </mat-form-field>
+
+      </div>
+      <button mat-button type="submit" color="primary">
+      Alterar
+      </button>
+    </mat-card-content>
+  </form>
+</mat-card>

@@ -1,0 +1,95 @@
+﻿<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<!-- Page navbar. -->
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+
+      <!-- Navbar Title -->
+      <span class="mdl-layout-title" [routerLink]="['/home']">ALOCCA</span>
+
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only" >
+
+      <!-- Professors options -->
+        <button id="demo-menu-lower-left-profs"
+          class="mdl-button mdl-js-button mdl-button--accent mdl-color-text--white" style="margin-left: 100px">
+        Professores
+        <mat-icon style="vertical-align: middle;"> arrow_drop_down </mat-icon>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-left-profs">
+          <li class="mdl-menu__item" [routerLink]="['/add-professor']">Cadastrar</li>
+          <li class="mdl-menu__item" [routerLink]="['/view-professors']">Cadastrados</li>
+        </ul>
+
+      <!-- Courses options -->
+        <button id="demo-menu-lower-left-courses"
+          class="mdl-button mdl-js-button mdl-button--accent mdl-color-text--white" style="margin-left: 5px">
+        Disciplinas
+          <mat-icon style="vertical-align: middle;"> arrow_drop_down </mat-icon>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-left-courses">
+          <li class="mdl-menu__item" [routerLink]="['/add-course']">Cadastrar</li>
+          <li class="mdl-menu__item" [routerLink]="['/view-courses']">Cadastradas</li>
+        </ul>
+
+      <!-- Classes option -->
+        <button id="demo-menu-lower-left"
+          class="mdl-button mdl-js-button mdl-button--accent mdl-color-text--white" [routerLink]="['/classes']" style="margin-left: 5px">
+        Turmas
+        </button>
+        
+      <!-- Schedules Option -->
+        <button id="demo-menu-lower-left"
+          class="mdl-button mdl-js-button mdl-button--accent mdl-color-text--white" [routerLink]="['/schedules-table']" style="margin-left: 5px">
+        Horários
+        </button>
+
+      </nav>
+
+        <!-- Spacer to align the next navbar options on its right-end. -->
+        <div class="mdl-layout-spacer"></div>
+
+      <!-- Semester selection option -->
+        <mat-form-field id="selected-semester">
+          <mat-select (change)="emitSemesterSelected()" [(ngModel)]="selectedSemesterID" name="selectedSemesterID">
+            <!--Added new semester -->
+            <mat-option (click)="openDialog()" [value]='selectedSemesterID'>
+              <i class="material-icons" id="add-semester-option">add_circle_outline</i> 
+              semestre
+            </mat-option>
+            <!--Added semesters -->
+            <mat-option class="select-semester-option" *ngFor="let sem of semesters" [value]="sem.name">
+              <i (click)="removeSemester(sem.name)" class="material-icons remove-semester" *ngIf="selectedSemesterID!==sem.name">remove_circle_outline</i> 
+              {{ sem.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+      <!-- Users option -->
+        <button id="demo-menu-lower-left-users"
+          class="mdl-button mdl-js-button mdl-button--accent mdl-color-text--white" style="margin-right: 5px">
+          Usuários
+          <mat-icon style="vertical-align: middle;"> arrow_drop_down </mat-icon>
+        </button >
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-left-users">
+          <li class="mdl-menu__item" [routerLink]="['/add-user']">Cadastrar</li>
+          <li class="mdl-menu__item" [routerLink]="['/view-users']">Cadastrados</li>
+          <li class="mdl-menu__item" [routerLink]="['/view-requests']">Requisições</li>
+        </ul>
+
+      <!-- Logout option. -->
+        <button id="demo-menu-lower-left"
+          class="mdl-button mdl-js-button mdl-button--accent mdl-color-text--white" (click)="logout()" [routerLink]="['/home']">
+          <b>Sair</b>
+        </button>
+    </div>
+  </header>
+<!-- Page content. -->
+  <main class="mdl-layout__content">
+      <div id="page-content">
+        <router-outlet></router-outlet>
+      </div>
+  </main>
+</div>

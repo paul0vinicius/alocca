@@ -1,0 +1,29 @@
+﻿.add-restriction-card {
+    margin: 50px 50px 50px 50px;
+    padding: 0px 0px 0px 0px;
+}
+
+.add-restriction-card-content {
+    padding: 30px 30px 30px 30px;
+}
+
+.credits-input {
+    margin-right: 5%;
+    width: 15%;
+}
+
+.table-container {
+    display: inline-block;
+}
+
+.restrictions-slider {
+    display: block;
+}
+
+.sliders-container {
+    display: inline;
+}
+
+.schedules-container {
+    position: relative;
+}

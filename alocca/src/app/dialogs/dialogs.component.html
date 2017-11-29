@@ -1,0 +1,11 @@
+<div  class="dialog-card">
+  <mat-toolbar color="primary">
+    {{ title }}
+    <span class="spacer"></span>
+  </mat-toolbar>
+  <p>{{ message }}</p>
+  <button type="button" class="mdl-button mdl-js-button mdl-button--primary"
+      (click)="dialogRef.close(true)">Sim</button>
+  <button type="button" class="mdl-button mdl-js-button mdl-button--accent"
+      (click)="dialogRef.close()">Não</button>
+</div>

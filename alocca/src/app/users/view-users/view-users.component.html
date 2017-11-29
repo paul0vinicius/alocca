@@ -1,0 +1,35 @@
+<mat-card id="view-user-card">
+  
+<!-- Card Toolbar -->
+  <mat-toolbar class="view-user-card-toolbar mdl-color-text--white mdl-color--primary">
+    Usuários Cadastrados
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+<!-- Card Content -->
+  <mat-card-content id="user-card-content">
+
+  <!-- Users table -->
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th>SIAPE</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.SIAPE}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td (click)="onDeleteUser(user.SIAPE,user.name,user.email)">
+              <i class="material-icons delete-button">delete</i>
+           </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </mat-card-content>
+</mat-card>

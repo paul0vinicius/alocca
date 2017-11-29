@@ -1,0 +1,33 @@
+﻿<mat-card id="edit-professor-card">
+  <form (ngSubmit)="onEditProfessor()" #editarProfessorForm="ngForm">
+  <!--Toolbar-->
+    <mat-toolbar class="edit-professor-card-toolbar mdl-color-text--white mdl-color--primary">
+      Editar Professor
+      <span class="spacer"></span>
+      <button mat-button id="cancel-button" [routerLink]="['/view-professors']">Cancelar</button>
+      <button mat-button [disabled]="!editarProfessorForm.form.valid">Salvar</button>
+    </mat-toolbar>
+
+  <!--Form-->
+    <mat-card-content id="edit-professor-card-content">
+      <div class="professor-card-row">
+        
+      <!-- Professor's SIAPE -->
+        <mat-form-field id="edit-professor-SIAPE-input" type="text">
+          <input matInput placeholder="SIAPE" [(ngModel)]="SIAPE" name="SIAPE" name="SIAPE" size="7" maxlength="7" pattern="[0-9]{7}" required>
+        </mat-form-field>
+
+      <!-- Professor name -->
+        <mat-form-field id="edit-professor-name-input" type="text">
+          <input matInput placeholder="Nome" [(ngModel)]="name" name="name" required>
+        </mat-form-field>
+
+      <!-- Professor nickname -->
+        <mat-form-field id="edit-professor-nickname-input" type="text">
+          <input matInput placeholder="Apelido" [(ngModel)]="nickname" name="nickname" size="10" maxlength="10" required>
+        </mat-form-field>
+
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>

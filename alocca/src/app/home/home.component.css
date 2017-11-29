@@ -1,0 +1,32 @@
+#home-card{
+    background-color: #303F9F;
+}
+#home-initial-section{
+    text-align: center;
+    width: 50%;
+    margin-top: 5%;    
+    margin-left: 5%;
+    color: #EFEFF4;
+    background-color: #3F51B5;
+}
+
+
+.column {
+    float: right;
+    width: 20%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Remove the blue outline from a selected option. */
+*:focus {
+outline: none;
+}
+.spacer {
+    flex: 1 1 auto;
+  }

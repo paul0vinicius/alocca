@@ -1,0 +1,52 @@
+﻿<mat-card class="add-restriction-card">
+ <form (ngSubmit)="submitRestrictionsForm()" #restrictionsForm="ngForm">
+  <!--Toolbar-->
+    <mat-toolbar color="primary">
+      Restrições  
+      <div class="mdl-layout-spacer"></div>
+      <button mat-button style="margin-right: 5px" [routerLink]="['/view-professors']">Cancelar</button> 
+      <button mat-button type="submit" [disabled]="!restrictionsForm.form.valid">Salvar</button>
+    </mat-toolbar>
+
+    <mat-card-content class="add-restriction-card-content">
+       <mat-form-field class="credits-input">
+        <input matInput placeholder="Mínimo de créditos" type="number" [(ngModel)]="minCredits" name="minCredits" required>
+      </mat-form-field>
+
+      <mat-form-field class="credits-input">
+        <input matInput placeholder="Máximo de créditos" type="number" [(ngModel)]="maxCredits" name="maxCredits" required>
+      </mat-form-field>
+   
+      <mat-form-field class="credits-input">
+        <input matInput placeholder="Créditos pós-graduação" type="number" [(ngModel)]="graduateCredits" name="graduateCredits" required>
+      </mat-form-field>
+
+      <hr>
+        <!--Schedules Table-->
+        <table class="mdl-data-table mdl-js-data-table table-container">
+          <!--Header of the table-->
+          <thead>
+            <tr>
+              <th>Horário</th>
+              <th>Segunda</th>
+              <th>Terça</th>
+              <th>Quarta</th>
+              <th>Quinta</th>
+              <th>Sexta</th>
+            </tr>
+          </thead>
+
+          <!--Boby of the table-->
+          <tbody *ngFor="let hour of HOURS; let j = index">
+              <tr>
+                <td>{{ hour }}</td>
+                <td *ngFor="let i of [1,2,3,4,5]">
+                  <mat-checkbox [checked]="verifyRestriction(5*j + i)">
+                  </mat-checkbox>
+                  </td>
+            </tr>
+          </tbody>
+        </table>
+    </mat-card-content>
+ </form>
+</mat-card>

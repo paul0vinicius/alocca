@@ -1,0 +1,28 @@
+<div class="classes-container">
+  <mat-card class="create-classes-container">
+    <form (ngSubmit)="saveNewClasses()" #classForm="ngForm">
+     <div class="new-classes-header">
+       Criar Turmas
+     </div>
+     
+        <div class="new-classes-content">
+
+          <mat-select class="course-name-input" placeholder="Disciplina" [(ngModel)]="courseKey" name="courseKey" required>
+            <mat-option *ngFor="let course of coursesList" [value]="course.$key">
+              {{ course.name }}
+            </mat-option>
+          </mat-select>
+
+          <mat-form-field class="classes-number-input">
+            <input matInput placeholder="Turmas" type="number" [(ngModel)]="classesNumber" name="classesNumber" min="1" step="1" required>
+          </mat-form-field>
+
+        <button mat-button [disabled]="!classForm.form.valid" type="submit" color="primary">
+          SALVAR
+        </button>
+
+        </div>
+
+    </form>
+  </mat-card>
+</div>

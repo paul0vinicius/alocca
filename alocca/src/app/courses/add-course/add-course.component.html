@@ -1,0 +1,115 @@
+<mat-card id="new-course-card">
+    <form (ngSubmit)="onAddNewCourse()" #courseForm="ngForm">
+    <!-- Card Toolbar -->
+        <mat-toolbar class="new-course-card-toolbar mdl-color-text--white mdl-color--primary">
+            Cadastrar Disciplina
+            <span class="spacer"></span>
+            <button mat-button id="cancel-button" [routerLink]="['/view-courses']">Cancelar</button>
+            <button mat-button [disabled]="!courseForm.form.valid" type="submit">Salvar</button>
+        </mat-toolbar>
+    <!-- Card Form -->
+        <mat-card-content id="new-course-card-content">
+            <div class="course-card-row">
+
+            <!-- Course code input -->
+                <mat-form-field id="professor-code-input" type="text">
+                    <input matInput placeholder="Código" [(ngModel)]="code" name="code" size="7" maxlength="7" pattern="[0-9]{7}" required>
+                </mat-form-field>
+
+            <!-- Course name input -->
+                <mat-form-field id="course-name-input">
+                    <input matInput placeholder="Nome" type="text" [(ngModel)]="name" name="name" required>
+                </mat-form-field>
+
+            <!-- Course short name input -->
+                <mat-form-field id="course-shortName-input">
+                    <input matInput placeholder="Sigla" type="text" [(ngModel)]="shortName" name="shortName" size="10" maxlength="10" required>
+                </mat-form-field>
+
+            <!-- Course credits input -->
+                <mat-form-field id="course-credits-input">
+                    <input matInput placeholder="Créditos" type="number" [(ngModel)]="credits" min="0" onkeypress="return event.charCode >= 48" name="credits" required>
+                </mat-form-field>
+            </div>
+
+            <div class="course-card-row">
+
+            <!-- Type of course input -->
+                <mat-form-field id="course-type-input">
+                    <mat-select placeholder="Tipo" [(ngModel)]="type" name="type" required>
+                        <mat-option *ngFor="let type of courseTypes" [value]="type">
+                            {{ type }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            
+            <!-- Recomended semester(s) input -->
+                <span [ngSwitch]="type">
+                    <span *ngSwitchCase="'Optativa'">
+                    <!--Recomended minimum Semester-->
+                        <mat-form-field id="minimum-semester" class="course-semester-input">
+                            <mat-select placeholder="Semestre Mín. Recomendado" [(ngModel)]="minimumSemester" name="minimumSemester" required>
+                                <mat-option *ngFor="let sem of semesters" [value]="sem">
+                                    {{ sem }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    <!--Recommended maximum Semester-->
+                        <mat-form-field id="maximum-semester" class="course-semester-input">
+                            <mat-select placeholder="Semestre Máx. Recomendado" [(ngModel)]="maximumSemester" name="maximumSemester" required>
+                                <mat-option *ngFor="let sem of semesters" [value]="sem">
+                                    {{ sem }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+
+                    <span *ngSwitchDefault>
+                    <!--Recommended semester for non-optional courses-->
+                        <mat-form-field id="unified-semester" class="course-semester-input">
+                            <mat-select placeholder="Semestre Recomendado" [(ngModel)]="minimumSemester" [(ngModel)]="maximumSemester" name="recomendedSemester" required>
+                                <mat-option *ngFor="let sem of semesters" [value]="sem">
+                                    {{ sem }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+                </span>
+
+            </div>
+
+            <div class="course-card-row">
+                
+            <!-- Offerer department input -->
+                <mat-form-field id="offerer-department" class="course-department-input">
+                    <mat-select placeholder="UA Ofertante" [(ngModel)]="offererDepartment" name="offererDepartment" required>
+                        <mat-option *ngFor="let dep of departments" [value]="dep">
+                            {{ dep }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            <!-- Requerer department input -->
+                <mat-form-field id="requerer-department" class="course-department-input">
+                    <mat-select placeholder="UA Solicitante" [(ngModel)]="requesterDepartment" name="requesterDepartment" required>
+                        <mat-option *ngFor="let dep of departments" [value]="dep">
+                            {{ dep }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </mat-card-content>
+  </form>
+</mat-card>
+
+<!-- EXAMPLE USING NEW ANGULAR MATERIAL
+<mat-form-field>
+  <mat-select placeholder="Favorite food">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+-->

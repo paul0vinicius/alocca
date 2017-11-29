@@ -1,0 +1,35 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.classes-container {
+    background: #E1F5FE;
+}
+
+.create-classes-container {
+    background: white;
+    margin-bottom: 24px;
+    padding: 10px 10px 10px 10px;
+}
+
+.new-classes-header {
+    padding: 8px 8px 8px 8px;
+    font-style: bold;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.new-classes-content {
+    margin: 8px 8px 8px 8px;
+}
+
+.course-name-input {
+    width: 25%;
+    margin-top: 10px;
+    margin-right: 24px;  
+}
+
+.classes-number-input {
+    margin-right: 24px;
+    width: auto;
+}

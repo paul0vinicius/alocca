@@ -1,0 +1,22 @@
+﻿#visualize-professor-card {
+  margin: 50px 50px 50px 50px;
+  padding: 0px 0px 0px 0px;
+}
+
+#professor-card-content {
+  text-align: center;
+  padding: 30px 30px 30px 30px;
+}
+
+.delete-button{
+  color: red;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Remove the blue outline from a selected option. */
+*:focus {
+outline: none;
+}

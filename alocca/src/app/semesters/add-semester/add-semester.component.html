@@ -1,0 +1,33 @@
+﻿﻿<!--Title-->
+<h2 matDialogTitle>Novo Semestre</h2>
+
+<!--Content-->
+<form (ngSubmit)="onAddNewSemester()" #semesterForm="ngForm">
+  <mat-dialog-content>
+    <div id="new-semester-card-content">
+
+    <!-- Year Input -->
+      <mat-select id="year-input" placeholder="Ano" [(ngModel)]="year" name="year" floatPlaceholder="never" required>
+        <mat-option *ngFor="let year of years" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+
+    <!-- Half Input -->
+      <mat-select id="half-input" placeholder="Semestre" [(ngModel)]="half" name="half" floatPlaceholder="never" required>
+        <mat-option *ngFor="let half of halves" [value]="half">
+          {{ half }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </mat-dialog-content>
+
+<!--Actions-->
+  <mat-dialog-actions id="dialog-actions">
+    <div class="mdl-layout-spacer"></div>
+    <button mat-button matDialogClose class="mdl-button mdl-js-button mdl-button--primary"
+            style="margin-right: 10px;">Cancelar</button>
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button mat-button [disabled]="!semesterForm.form.valid" class="mdl-button mdl-js-button mdl-button--primary" [matDialogClose]="true" (click)="onAddNewSemester()">Salvar</button>
+  </mat-dialog-actions>
+  </form>

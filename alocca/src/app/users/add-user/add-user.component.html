@@ -1,0 +1,33 @@
+<mat-card id="new-user-card">
+  <form (ngSubmit)="onAddNewUser()" #userForm="ngForm">
+  <!-- Card Toolbar -->
+    <mat-toolbar class="new-user-card-toolbar mdl-color-text--white mdl-color--primary">
+      Cadastrar Usuário   
+      <span class="spacer"></span>
+      <button mat-button id="cancel-button" [routerLink]="['/view-users']">Cancelar</button> 
+      <button mat-button type="submit" [disabled]="!userForm.form.valid" >Cadastrar</button>
+    </mat-toolbar>
+ 
+  <!-- Card Form -->
+    <mat-card-content id="new-user-card-content">
+      <div class="user-card-row">
+
+      <!-- User SIAPE input -->
+        <mat-form-field id="user-SIAPE-input" type="text">
+          <input matInput placeholder="SIAPE" [(ngModel)]="SIAPE" name="SIAPE" size="7" maxlength="7" pattern="[0-9]{7}" required>
+        </mat-form-field>
+
+      <!-- User name input -->
+        <mat-form-field id="user-name-input" type="text">
+          <input matInput placeholder="Nome" [(ngModel)]="name" name="name" required>
+        </mat-form-field>
+
+      <!-- User e-mail input -->
+        <mat-form-field id="user-email-input">
+          <input matInput pattern="[A-Za-z0-9._%+-]+@+[a-z]+.ufcg.edu.br" placeholder="E-mail" [(ngModel)]="email" name="email" required>
+        </mat-form-field>
+  
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>

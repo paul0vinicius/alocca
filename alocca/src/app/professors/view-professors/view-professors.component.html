@@ -1,0 +1,35 @@
+﻿<mat-card id="visualize-professor-card">
+<!--Card Toolbar-->
+  <mat-toolbar class="view-professor-card-toolbar mdl-color-text--white mdl-color--primary">
+    Professores Cadastrados
+  </mat-toolbar>
+
+<!--Card Content-->
+  <mat-card-content id="professor-card-content">
+  <!--Professors Table-->
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Apelido</th>
+          <th>Matrícula SIAPE</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let professor of professors">
+          <td><a class="mdl-color-text--primary" (click)="onEditRestrictions(professor.SIAPE)">{{professor.name}}</a></td>
+          <td>{{professor.nickname}}</td>
+          <td>{{professor.SIAPE}}</td>
+          <td [routerLink] = "['/edit-professor/' + professor.SIAPE]">
+            <i class="material-icons mdl-color-text--accent">edit</i>
+          </td>
+          <td (click)="onDeleteProfessor(professor.SIAPE,professor.nickname)">
+              <i class="material-icons delete-button">delete</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,16 @@
+﻿﻿.new-semester-card {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#new-semester-card-content {
+  display: inline-block;
+}
+
+#year-input {
+  margin-right: 30px;
+}
+
+#dialog-actions {
+  margin-top: 20px;
+}

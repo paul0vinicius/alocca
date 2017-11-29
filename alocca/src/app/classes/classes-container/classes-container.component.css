@@ -1,0 +1,27 @@
+.classes-container {
+    background: #E1F5FE;
+    padding: 20px 20px 20px 20px;
+    width: 114%;
+    height: 100vh;
+    float: left;
+    display: inline-flex;
+}
+
+.add-class-element {
+    width: 900px;
+}
+
+.table-element {
+    width: 900px;
+    max-width: 900px;
+}
+
+.board-element {
+    display: inline-block;
+    width: 400px;
+    margin-left: 20px;
+}
+
+.creation-table-element {
+     display: inline-block;
+}

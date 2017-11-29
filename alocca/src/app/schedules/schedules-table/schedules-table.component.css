@@ -1,0 +1,81 @@
+.visualize-schedules-card{
+    width: 100%;
+}
+
+.classes-schedules-table{
+    width: 100%;
+}
+
+.div-table{
+  align: center;
+  width:100%;
+}
+
+.geral-table{
+  background-color: #07304C;
+  height: 10%;
+}
+
+.hour-table{
+  background-color: white;
+  height: 10%;
+}
+
+.table-head{
+    /*change color*/
+    background-color: lightsteelblue ;
+}
+
+.hour-th{
+  text-align: center;
+  vertical-align: bottom;
+  background-color: #1f8dd8;
+  color: white;
+  font-size: 105%;
+  height: 10%;
+}
+
+.hour-td{
+  background-color: white;
+  vertical-align: center;
+  color: black;
+  height: 10%;
+}
+
+.delete-button{
+  color: red;
+}
+
+.week-day{
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: 150%;
+}
+
+.week-hours{
+  text-align: center;
+  vertical-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 150%;
+}
+
+.new-class-selection{
+    width: 100%;
+    text-align: center;
+}
+
+.nohover:hover{
+  background-color: #07304C;
+}
+
+.foo-red{
+  color: red;
+}
+
+/* Remove the blue outline from a selected option. */
+*:focus {
+outline: none;
+}

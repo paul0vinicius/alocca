@@ -1,0 +1,49 @@
+<mat-card id="view-courses-card">
+  
+<!-- Card Toolbar -->
+  <mat-toolbar class="view-courses-card-toolbar mdl-color-text--white mdl-color--primary">
+    Disciplinas Cadastradas
+  </mat-toolbar>
+
+<!-- Card Content -->
+  <mat-card-content id="course-card-content">
+
+  <!-- Courses table -->
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th title="Código">Código</th>
+          <th title="Nome">Nome</th>
+          <th title="Sigla">Sigla</th>
+          <th title="Tipo">Tipo</th>
+          <th title="Créditos">Créd.</th>
+          <th title="Semestres Recomendados">Semestres</th>
+          <th title="Unidade Acadêmica Ofertante">UAO</th>
+          <th title="Unidade Acadêmica Solicitante">UAS</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{course.code}}</td>
+          <td>{{course.name}}</td>
+          <td>{{course.shortName}}</td>
+          <td>{{course.type}}</td>
+          <td>{{course.credits}}</td>
+          <td *ngIf='course.minimumSemester!==course.maximumSemester'>{{course.minimumSemester}}º ao {{course.maximumSemester}}º</td>
+          <td *ngIf='course.minimumSemester===course.maximumSemester'>{{course.minimumSemester}}º</td>
+          <td>{{course.offererDepartment}}</td>
+          <td>{{course.requesterDepartment}}</td>
+          <td [routerLink] = "['/edit-course/' + course.code]">
+            <i class="material-icons mdl-color-text--accent">edit</i>
+          </td>
+          <td (click)="onDeleteCourse(course.code, course.shortName)">
+            <i class="material-icons delete-button">delete</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </mat-card-content>
+</mat-card>
