@@ -1,6 +1,6 @@
 # ALOCCA
 
-[![CI Status](http://img.shields.io/travis/paul0vinicius/alocca.svg?style=flat)](https://travis-ci.org/paul0vinicius/alocca)
+[![CI Status](http://img.shields.io/travis/LucasAurelio/alocca.svg?style=flat)](https://travis-ci.org/LucasAurelio/alocca)
 
 Alocca is a web system that helps department coordinators of universities allocate professors, classes and classrooms every  semester.
 
